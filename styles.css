@@ -1,0 +1,36 @@
+* {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: default;
+}
+
+body {
+    background-image: url('images/gold-marble1.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+}
+
+#outer-box {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    border: 3px solid black;
+}
+
+.board-row-even {
+    height: 12.5%;
+    width: 100%;
+}
+.board-row-odd {
+    height: 12.5%;
+    width: 100%;
+}
+.board-square {
+    height: 100%;
+    width: 12.5%;
+    display: inline-block;
+    margin: 0;
+}
