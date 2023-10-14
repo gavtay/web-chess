@@ -14,8 +14,8 @@ body {
 }
 
 #outer-box {
-    height: 500px;
-    width: 500px;
+    height: 75%;
+    width: auto;
     margin: auto;
     border: 4px solid black;
 }
