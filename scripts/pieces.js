@@ -6,13 +6,8 @@ class Piece {
         this.locat = locat;
         // team (string like 'white' or 'black')
         this.team = team;
-
+        // determines whether a 3 piece is knight or bishop
         this.kb = kb;
-
-        /* function to set the legal moves
-        function to change the color of squares that are legal moves
-        function to change the position of the piece when legal square is pressed
-        function to update the image of the piece on the board */
     }
 
     getValue() {
