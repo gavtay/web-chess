@@ -72,9 +72,9 @@ blackPawnThree, blackPawnFour, blackPawnFive, blackPawnSix, blackPawnSeven, blac
 blackRookOne, blackKnightOne, blackBishopOne, blackQueen, blackKing, blackBishopTwo, blackKnightTwo,
 blackRookTwo];
 
-loadImage(objArray);
+loadStartPieces(objArray);
 
-function loadImage(objectArray) {
+function loadStartPieces(objectArray) {
     for (let i = 0; i < objArray.length; ++i) {
 
         let value = objectArray[i].getValue();
@@ -167,3 +167,6 @@ function loadImage(objectArray) {
     }   
 }
 
+/* Create an event listener function for when a piece is clicked
+Make a new function for changing the pieces locations, use the setter to change the location of the piece
+*/
