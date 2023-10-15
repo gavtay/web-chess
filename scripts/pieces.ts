@@ -70,16 +70,16 @@ const blackBishopTwo = new Piece(3, 'f1', 'black', 'b');
 const blackKnightTwo = new Piece(3, 'g1', 'black', 'k');
 const blackRookTwo = new Piece (5, 'h1', 'black');
 
-const objArray: object = [whitePawnOne, whitePawnTwo, whitePawnThree, whitePawnFour, whitePawnFive,
+const objArray: object = [ whitePawnOne, whitePawnTwo, whitePawnThree, whitePawnFour, whitePawnFive,
 whitePawnSix, whitePawnSeven, whitePawnEight, whiteRookOne, whiteKnightOne, whiteBishopOne,
 whiteQueen, whiteKing, whiteBishopTwo, whiteKnightTwo, whiteRookTwo, blackPawnOne, blackPawnTwo,
 blackPawnThree, blackPawnFour, blackPawnFive, blackPawnSix, blackPawnSeven, blackPawnEight,
 blackRookOne, blackKnightOne, blackBishopOne, blackQueen, blackKing, blackBishopTwo, blackKnightTwo,
-blackRookTwo];
+blackRookTwo ];
 
 loadStartPieces(objArray);
 
-function loadStartPieces(objectArray): void {
+function loadStartPieces(objectArray: any): void {
     for (let i: number = 0; i < objectArray.length; ++i) {
 
         let value: number = objectArray[i].getValue();
@@ -93,39 +93,39 @@ function loadStartPieces(objectArray): void {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-pawn.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 3) {
                 if (kb === 'k') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/white-knight.png';
                     
-                    existParent.appendChild(newChild);
+                    existParent!.appendChild(newChild);
                 }
                 if (kb === 'b') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/white-bishop.png';
                     
-                    existParent.appendChild(newChild);
+                    existParent!.appendChild(newChild);
                 }
             }
             if (value === 5) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-rook.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 9) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-queen.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 1000) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-king.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
         }
         else {
@@ -133,39 +133,39 @@ function loadStartPieces(objectArray): void {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-pawn.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 3) {
                 if (kb === 'k') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/black-knight.png';
                     
-                    existParent.appendChild(newChild);
+                    existParent!.appendChild(newChild);
                 }
                 if (kb === 'b') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/black-bishop.png';
                     
-                    existParent.appendChild(newChild);
+                    existParent!.appendChild(newChild);
                 }
             }
             if (value === 5) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-rook.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 9) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-queen.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
             if (value === 1000) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-king.png';
                 
-                existParent.appendChild(newChild);
+                existParent!.appendChild(newChild);
             }
         }
     
