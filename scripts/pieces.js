@@ -149,6 +149,44 @@ function loadStartPieces(objectArray) {
         }
     }
 }
-/* Create an event listener function for when a piece is clicked
-Make a new function for changing the pieces locations, use the setter to change the location of the piece
-*/
+var clickCount = 0;
+var oldId = '';
+var oldColor = '';
+function whenClicked(that) {
+    if (clickCount === 0) {
+        if (that.hasChildNodes()) {
+            oldColor = window.getComputedStyle(that).backgroundColor;
+            oldId = that.id;
+            that.style.backgroundColor = '#FF6865';
+            clickCount++;
+            console.log('Picked a valid piece, now pick a valid place');
+            return;
+        }
+        else {
+            console.log('Not a valid piece');
+            return;
+        }
+    }
+    if (clickCount === 1) {
+        if (that.hasChildNodes()) {
+            clickCount = 0;
+            var oldElement = document.getElementById(oldId);
+            oldElement.style.backgroundColor = oldColor;
+            console.log('The piece can not move here');
+            oldId = '';
+            oldColor = '';
+            return;
+        }
+        else {
+            var oldChild = document.getElementById(oldId);
+            oldChild.style.backgroundColor = oldColor;
+            var newParent = that;
+            console.log('The piece can move here');
+            clickCount = 0;
+            movePiece(oldChild, newParent);
+        }
+    }
+}
+function movePiece(oldPar, newPar) {
+    newPar.appendChild(oldPar.childNodes[0]);
+}

@@ -36,6 +36,7 @@ class Piece {
     setTeam(team: string) {
         this.team = team;
     }
+    
 }
 const whitePawnOne = new Piece(1, 'a7', 'white');
 const whitePawnTwo = new Piece(1, 'b7', 'white');
@@ -172,6 +173,51 @@ function loadStartPieces(objectArray: any): void {
     }   
 }
 
-/* Create an event listener function for when a piece is clicked
-Make a new function for changing the pieces locations, use the setter to change the location of the piece
-*/
+
+
+let clickCount: number = 0;
+let oldId: string = '';
+let oldColor: string = '';
+
+function whenClicked(that: any): void {
+    if (clickCount === 0) {
+        if (that.hasChildNodes()) {
+            oldColor = window.getComputedStyle(that).backgroundColor;
+            oldId = that.id;
+            that.style.backgroundColor = '#FF6865';
+            clickCount++;
+            console.log('Picked a valid piece, now pick a valid place');
+
+            return;
+        }
+        else { 
+            console.log('Not a valid piece');
+            return; }
+    }
+    if (clickCount === 1) {
+        if (that.hasChildNodes()) {
+            clickCount = 0;
+            let oldElement = document.getElementById(oldId);
+            oldElement!.style.backgroundColor = oldColor;
+            console.log('The piece can not move here');
+            oldId = '';
+            oldColor = '';
+
+            return;
+        }
+        else {
+            let oldChild = document.getElementById(oldId);
+            oldChild!.style.backgroundColor = oldColor;
+            let newParent = that;
+
+            console.log('The piece can move here');
+            clickCount = 0;
+
+            movePiece(oldChild, newParent);
+        }
+    }
+}
+
+function movePiece(oldPar: any, newPar: any) {
+    newPar.appendChild(oldPar.childNodes[0]);
+}
