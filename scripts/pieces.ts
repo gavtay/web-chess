@@ -38,6 +38,7 @@ class Piece {
     }
     
 }
+
 const whitePawnOne = new Piece(1, 'a7', 'white');
 const whitePawnTwo = new Piece(1, 'b7', 'white');
 const whitePawnThree = new Piece(1, 'c7', 'white');
@@ -191,33 +192,63 @@ function whenClicked(that: any): void {
             return;
         }
         else { 
-            console.log('Not a valid piece');
+            console.log('Not a valid piece, choose a valid piece');
             return; }
     }
     if (clickCount === 1) {
-        if (that.hasChildNodes()) {
-            clickCount = 0;
-            let oldElement = document.getElementById(oldId);
-            oldElement!.style.backgroundColor = oldColor;
-            console.log('The piece can not move here');
-            oldId = '';
-            oldColor = '';
+        let nChild: any = that.childNodes[0];
+        let oParentId: any = document.getElementById(oldId);
+        let oChild: any = oParentId.childNodes[0];
+        let oChildSrc: string = oChild.src;
+        let oChildColor: number = 1;
+        let nChildColor: number = 1;
 
-            return;
+        if (that.hasChildNodes()) {
+            let nChildSrc: string = nChild.src;
+            nChildColor = 1;
+
+            if (oChildSrc.substring(45 ,50) === 'black') { oChildColor = 2; };
+            if (nChildSrc.substring(45, 50) === 'black') { nChildColor = 2 }; 
+
+            if (oChildColor === nChildColor) {
+                clickCount = 0;
+                let oldElement = document.getElementById(oldId);
+                oldElement!.style.backgroundColor = oldColor;
+                console.log('You can not take the same color piece');
+                oldId = '';
+                oldColor = '';
+            }
+            if (oChildColor !== nChildColor) {
+                clickCount = 0;
+                let oldElement = document.getElementById(oldId);
+                oldElement!.style.backgroundColor = oldColor;
+                let newParent = that;
+                
+                console.log('You win a piece!');
+                
+                takePiece(oldElement, newParent);
+                clickCount = 0;
+            }
         }
         else {
             let oldChild = document.getElementById(oldId);
             oldChild!.style.backgroundColor = oldColor;
             let newParent = that;
-
+            
             console.log('The piece can move here');
-            clickCount = 0;
-
+            
             movePiece(oldChild, newParent);
+            clickCount = 0;
         }
     }
 }
 
 function movePiece(oldPar: any, newPar: any) {
     newPar.appendChild(oldPar.childNodes[0]);
+}
+function takePiece(oldPar: any, newPar: any) {
+    let imgDel: any = newPar.childNodes[0];
+    newPar.removeChild(imgDel);
+
+    newPar.appendChild(oldPar.childNodes[0]); 
 }
