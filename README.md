@@ -42,15 +42,15 @@ Before you begin, ensure you have the following software installed:
 
    cd web-chess
 
-4. Install project dependencies
+3. Install project dependencies:
 
    npm install
 
-5. Compile TS to JS
+4. Compile TS to JS:
 
    tsc
 
-6. Open the project in web browser
+5. Open the project in web browser:
 
    open index.html
 
