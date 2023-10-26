@@ -39,18 +39,18 @@ Before you begin, ensure you have the following software installed:
    git clone https://github.com/yourusername/web-chess.git
 
 2. Change directory to the parent directory:
-   
-  cd web-chess
 
-3. Install project dependencies
+   cd web-chess
+
+4. Install project dependencies
 
    npm install
 
-4. Compile TS to JS
+5. Compile TS to JS
 
    tsc
 
-5. Open the project in web browser
+6. Open the project in web browser
 
    open index.html
 
