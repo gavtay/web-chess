@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0;
+    font-size: 0px;
 }
 
 #outer-box {
@@ -33,4 +33,10 @@ body {
     width: 12.5%;
     display: inline-block;
     margin: 0;
+}
+.white {
+    background-color: #f8e7bb;
+}
+.brown {
+    background-color: #72573f;
 }

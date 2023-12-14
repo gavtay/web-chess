@@ -83,7 +83,6 @@ loadStartPieces(objArray);
 
 function loadStartPieces(objectArray: any): void {
     for (let i: number = 0; i < objectArray.length; ++i) {
-
         let value: number = objectArray[i].getValue();
         let team: string = objectArray[i].getTeam();
         let loc: string = objectArray[i].getLocat();    
@@ -94,39 +93,33 @@ function loadStartPieces(objectArray: any): void {
             if (value === 1) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-pawn.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 3) {
                 if (kb === 'k') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/white-knight.png';
-                    
                     existParent!.appendChild(newChild);
                 }
                 if (kb === 'b') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/white-bishop.png';
-                    
                     existParent!.appendChild(newChild);
                 }
             }
             if (value === 5) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-rook.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 9) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-queen.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 1000) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/white-king.png';
-                
                 existParent!.appendChild(newChild);
             }
         }
@@ -134,43 +127,36 @@ function loadStartPieces(objectArray: any): void {
             if (value === 1) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-pawn.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 3) {
                 if (kb === 'k') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/black-knight.png';
-                    
                     existParent!.appendChild(newChild);
                 }
                 if (kb === 'b') {
                     const newChild = document.createElement('img');
                     newChild.src = 'images/black-bishop.png';
-                    
                     existParent!.appendChild(newChild);
                 }
             }
             if (value === 5) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-rook.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 9) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-queen.png';
-                
                 existParent!.appendChild(newChild);
             }
             if (value === 1000) {
                 const newChild = document.createElement('img');
                 newChild.src = 'images/black-king.png';
-                
                 existParent!.appendChild(newChild);
             }
         }
-    
     }   
 }
 
